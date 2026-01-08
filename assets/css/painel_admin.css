@@ -1,0 +1,287 @@
+/**
+* Arquivo: painel_admin.css
+* 
+* Descrição:
+* Folha de estilos para as paginas de painel administrativo da Pizzaria BellaVitta.
+* Contém estilos específicos para a interface de administração.
+* 
+* Estrutura do arquivo:
+* -> Configurações globais
+* -> Menu lateral (offcanvas)
+* -> Área de conteúdo principal
+* -> Componentes de UI (cards, tabelas, formulários e badge)
+* -> Elementos interativos (botões, paginação)
+* -> Responsividade
+* 
+* @ Autor - Eduardo Torres Do Ó
+* @ Direitos Reservados - 2025 BellaVitta
+*/
+
+/* ============================================= 
+    ESTILOS GERAIS PARA AS PAGINAS DE ADMIN
+/* ============================================= */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #2e1f15; /* marrom escuro */
+  color: #fdfbf7; /* branco suave */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ============================================= 
+ MENU LATERAL (OFFCANVAS) 
+============================================= */
+
+.offcanvas {
+    width: 250px;
+    background-color: #2a1c13; /* marrom médio */
+    color: #fff8e6;
+}
+
+.offcanvas .nav-item {
+    margin-bottom: 5px;
+}
+
+.offcanvas .nav-link {
+    color: #e7d3b4; /* bege claro */
+    padding: 10px 15px;
+    border-radius: 0.25rem;
+    margin: 0 10px;
+    transition: all 0.2s;
+}
+
+.offcanvas .nav-link:hover {
+    color: #fff;
+    background-color: #864d1b9b; /* marrom mais forte */
+}
+
+.offcanvas .nav-link.active {
+    background-color: rgb(74, 46, 28); /* bege dourado translúcido */
+    color: white; 
+    font-weight: bold;
+}
+
+.offcanvas .nav-link.text-danger:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+}
+
+
+
+/* ============================================= 
+  RESPONSIVIDADE LAYOUT EM DISPOSTIVOS
+ ============================================= */
+
+/* OFFCANVAS DESKTOP FIXO */
+@media (min-width: 992px) {
+    .offcanvas.offcanvas-start {
+        transform: none;
+        visibility: visible !important;
+        position: fixed;
+        height: 100vh;
+    }
+    .offcanvas-backdrop {
+        display: none !important;
+    }
+    .btn[data-bs-toggle="offcanvas"] {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 56px;
+    }
+
+    .content-wrapper, .main-footer {
+        margin-left: 0 !important;
+    }
+
+    .offcanvas.offcanvas-start:not(.show) {
+        transform: translateX(-100%) !important;
+        visibility: hidden !important;
+    }
+}
+
+
+
+
+/* ============================================= 
+    ÁREA DE CONTEÚDO PRINCIPAL 
+============================================= */
+
+/* Container do conteúdo */
+.content-wrapper {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: calc(100vh - 60px);
+    background-color: #402b1e; /* marrom intermediário */
+    transition: margin-left 0.3s ease;
+}
+
+/* Rodapé */
+.main-footer {
+    margin-left: 250px;
+    padding: 15px;
+    background-color: #2a1c13;
+    border-top: 1px solid #5e3b2a;
+    color: #d3c3b0;
+    font-size: 0.9rem;
+    transition: margin-left 0.3s ease;
+}
+
+
+/* ============================================= 
+       COMPONENTES DE CARD 
+============================================= */
+
+/* Estilo base dos cards */
+.card {
+    background-color: #4a2e1c;
+    border: 1px solid #6b3e27;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    color: #fff6e5;
+}
+
+/* Cabeçalho do card */
+.card-header {
+    background-color: #3a2315;
+    border-bottom: 1px solid #6b3e27;
+    color: white ;
+    font-weight: 600;
+}
+
+
+/* ============================================= 
+   ESTILIZAÇÃO DAS TABELAS 
+============================================= */
+
+/* Estilo base das tabelas */
+.table {
+    color: #fdfbf7;
+    background-color: #4b3124;
+}
+
+/* Cabeçalho da tabela */
+.table th {
+    background-color: #2e1c11;
+    color: rgb(242, 152, 73);
+    border-bottom: 2px solid #6b3e27;
+}
+
+/* Células da tabela */
+.table td {
+    border-top: 1px solid #6b3e27;
+}
+
+/* Efeito hover nas linhas */
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+
+/* ============================================= 
+  STATUS (BADGES) 
+============================================= */
+
+/* Status Pendente */
+.status-pendente {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border: 1px solid #ffc107;
+}
+
+/* Status Entregue */
+.status-entregue {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+/* Status Cancelado */
+.status-cancelado {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+/* ============================================= 
+BOTÕES 
+============================================= */
+
+.btn-primary {
+    background-color: #6c471d;
+    color: white;
+    border:1px solid #6c471d;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border: 1px solid #6c471d;
+
+}
+
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+
+/* =============================================
+FORMULÁRIOS 
+============================================= */
+
+.form-control,
+.form-select {
+    background-color: #3b271b;
+    color: #fdfbf7;
+    border: 1px solid #5e3b2a;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #4d3224;
+    border-color: #492710;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    color:white;
+}
+
+
+
+/* ============================================= 
+  PAGINAÇÃO 
+============================================= */
+
+
+/* Item ativo da paginação */
+.page-item.active .page-link {
+    background-color: #75441a;
+    border-color: #895120;
+    color: white;
+}
+
+
+/* Links da paginação */
+.page-link {
+    color:  white;
+    background-color:  #75441a;
+    border: 1px solid#895120;
+}
+
+
+/* Hover dos links */
+.page-link:hover {
+    color: white;
+    background-color: #5c3e2e;
+    border-color: #6b3e27;
+}

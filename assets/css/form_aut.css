@@ -1,0 +1,283 @@
+/**
+* Arquivo: form_aut.css 
+* 
+* Descrição:
+* Folha de estilos especializada para formulários da Pizzaria BellaVitta.
+* Contém estilos para todos os componentes de formulário (login, cadastro, esqueci senha e recuperação de senha).
+* 
+* Funcionalidades:
+* -> Layout centralizado e responsivo
+* -> Estilização completa de campos e botões
+* -> Sistema de validação visual
+* -> Animações e efeitos de transição
+* 
+* @ Autor - Eduardo Torres Do Ó
+* @ Direitos Reservados - 2025 BellaVitta
+*/
+
+/* ==============================================
+   ESTILIZAÇãO PARA O CORPO DA PÁGINA
+=============================================== */
+body {
+  background: linear-gradient(rgba(68, 35, 1, 0.418), rgba(68, 35, 1, 0.418)), url(../img/hero/coffe.jpeg)  center center / cover no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+/* ==============================================
+   CONTAINER PAI DO FORMULÁRIO
+=============================================== */
+.aut-container {
+  background:rgba(67, 41, 23, 0.723);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  max-width: 450px;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px  rgba(68, 42, 24, 0.767);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 133, 45, 0.429);
+  animation: fadeIn 0.9s ease-out;
+}
+
+/* ==============================================
+   ANIMAÇãO DE ENTRADA DO FORMULÁRIO
+=============================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================================
+  TITULO DO CONTAINER PAI DO FORMULÁRIO
+=============================================== */
+.aut-container h3 {
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* ==============================================
+   CAMPOS DE ENTRADA DO FORMULÁRIO
+=============================================== */
+.aut-container input {
+  color:  white !important;
+}
+
+/* ==============================================
+   CAMPOS DE ENTRADA DO FORMULÁRIO QUANDO FOCADOS
+=============================================== */
+.aut-container input:focus {
+  color: white !important;
+}
+
+/* ==============================================
+  GRUPOS INPUT , ESTILIZACAO GERAL DE CADA CAMPO
+=============================================== */
+.input-group {
+  background: rgba(109, 70, 39, 0.595);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(158, 105, 20, 0.695);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* ==============================================
+  CAMPO FOCADO
+=============================================== */
+.input-group:focus-within {
+  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.25);
+  outline: none; /* Remove o contorno */
+  background-color: rgba(109, 70, 39, 0.595);
+
+
+}
+
+/* ==============================================
+  ICONES DO INPUT
+=============================================== */
+.input-group-text {
+  background:rgb(66, 41, 30);
+  border: none;
+  color:rgb(222, 221, 216);
+  font-size: 1.1rem;
+}
+
+/* ==============================================
+  FORM-CONTROL(DENTRO DO INPUT)
+=============================================== */
+.form-control {
+  background: transparent;
+  box-shadow: none;
+  color: white;
+  border: none;
+}
+
+/* ==============================================
+  FORM-CONTROL QUANDO FOCADO
+=============================================== */
+.form-control:focus {
+  background: transparent;
+  box-shadow: none;
+  color: rgb(255, 208, 0);
+}
+
+/* ==============================================
+  PLACEHOLDER(LEGENDA QUE FICA DENTRO DO CAMPO INPUT)
+=============================================== */
+.form-control::placeholder {
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+/* ==============================================
+  BOTÃO DE AUTENTICAÇÃO + FOCO DELE
+=============================================== */
+.btn-aut {
+  background-color:rgba(98, 61, 31, 0.996); 
+  color:white;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(114, 73, 40, 0.64);
+  transition: 0.3s ease;
+}
+
+.btn-aut:hover {
+  background-color: transparent;
+  color:white;
+  border: 2.5px solid #5c3b1e;
+  transform: scale(1.02);
+}
+
+/* ==============================================
+  LINKS + QUANDO PASSA O MOUSE POR CIMA
+=============================================== */
+.aut-links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.aut-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.aut-links a:hover {
+  color: rgba(134, 80, 35, 0.929);
+  text-decoration: underline;
+}
+
+/* ==============================================
+  CAIXA DE MARCAÇÃO DOS TERMOS (CHECKBOX)
+=============================================== */
+.form-check {
+  text-align: left;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.form-check-input {
+  border: 1.5px solid rgb(66, 41, 30);
+}
+
+.form-check-input:checked {
+  background-color: rgb(66, 41, 30);
+  border-color: rgb(83, 50, 36);
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+/* ==============================================
+ LINKS DE PRIVACIDADE
+=============================================== */
+.privacidade-link {
+  color: rgb(150, 103, 33);
+  text-decoration: none;
+}
+
+.privacidade-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Remove TODOS os estilos de autocomplete do navegador */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color:  white !important; /* Texto amarelo */
+    -webkit-box-shadow: 0 0 0 1000px #5c3b1ef8 inset !important; /* Fundo escuro */
+    caret-color: rgb(255, 255, 255) !important; 
+    outline: none !important; 
+
+}
+
+
+
+
+/* ==============================================
+  MENSAGEM DE ERRO GERAL (ACIMA DO FORMULARIO)
+=============================================== */
+.erro-geral {
+  background: #c82a2a;
+  color: white;
+  font-weight: bold;
+  padding: 14.5px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* ==============================================
+ MENSAGEM DE ERRO-BORDA ( MARCA O CAMPO INPUT)
+=============================================== */
+.erro-borda {
+  border: 1.6px solid #e92424e9;
+}
+
+/* ==============================================
+  MENSAGEM DE ERRO-VALIDACAO ( ABAIXO DO CAMPO INPUT)
+=============================================== */
+.erro-validacao {
+  text-align: center;
+  margin-bottom: 7.5px;
+  margin-top: -7.5px;
+  font-size: 14.7px;
+  font-weight: bold;
+  color: #e92424e9;
+}
+
+/* ==============================================
+MENSAGEM DE SUCESSO APÓS SUBMISSÃO DO FORMULÁRIO
+=============================================== */
+.sucesso {
+  background: #1daa5f;
+  color: white;
+  font-weight: bold;
+  padding: 14.5px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}

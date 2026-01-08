@@ -1,0 +1,395 @@
+/* ==============================================
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+=============================================== */
+:root {
+  --primary-color: #DA9F5B;
+  --sticky-color: #42291e;
+  --text-light: #ffffff;
+  --transition: all 0.5s ease;
+}
+
+/* ==============================================
+   CORPO DE ESTILO DA PAGINA 
+=============================================== */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==============================================
+   LOGOTIPO
+=============================================== */
+.brand-logo {
+  height: 85px;
+  margin-right: -17px;
+  padding-bottom: 10px;
+}
+
+/* QUANDO O LOGO ESTIVER STICKY */
+.brand-logo.sticky-top {
+  max-height: 60px;
+}
+
+/* ==============================================
+   BOTÃO 
+=============================================== */
+
+.btn-warning {
+  background: #bc874b;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: transparent;
+  color: #bc874b;/* Altera a cor do texto no hover */
+  border: 2px solid #bc874b;
+}
+
+/* ==============================================
+   MENU DE NAVEGAÇÃO (NAVBAR)
+=============================================== */
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  transition: var(--transition);
+}
+
+/* NAVBAR QUANDO FOR STICKY */
+.navbar.sticky-top {
+  position: fixed;
+  background: var(--sticky-color);
+}
+
+/* ==============================================
+   LINKS DE NAVEGAÇÃO DO NAVBAR
+=============================================== */
+.nav-link {
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  margin-right: 25px;
+  padding: 35px 0;
+  color: var(--text-light) !important;
+  font-size: 18px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+/* QUANDO FOREM STICKY */
+.nav-link.sticky-top {
+  padding: 20px 0;
+  color: white !important;
+}
+
+/* QUANDO PASSA O MOUSE POR CIMA DOS LINKS OU QUANDO ESTÁ ATIVO */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* EFEITO DE SUBLINHADO AMARELADO EM CIMA DA BORDA DO NAVBAR */
+@media (min-width: 992px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 50%;
+    background: var(--primary-color);
+    transition: var(--transition);
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: calc(100% - 2px);
+    left: 1px;
+  }
+}
+
+/* ==============================================
+   COMPORTAMENTO DO NAVBAR , COLLAPSE , LINKS E LOGOTIPO PARA TELAS ATÉ 991PX
+=============================================== */
+@media (max-width: 991.98px) {
+  .navbar {
+    position: relative;
+    background: var(--sticky-color) !important;
+  }
+
+
+  /* MENU COLAPSAVEL ( DENTRO DO BOTAO TOGGLER) */
+  .navbar-collapse {
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+  }
+
+  .nav-link {
+    padding: 10px 0px !important;
+    margin-right: 0 !important;
+    color: var(--text-light) !important;
+  }
+
+   .brand-logo {
+    max-height: 80px;
+  }
+
+  /* BOTÃO DO NAVBAR-TOGGLER */
+  .navbar-toggler {
+    border-color: var(--dark-color);
+    background-color: var(--primary-color);
+  }
+}
+
+/* ==============================================
+   SEÇÃO HERO
+=============================================== */
+.hero-section {
+   background:  linear-gradient(rgba(35, 19, 13, 0.418), rgba(87, 49, 33, 0.523)),
+  url(../img/hero/coffe.jpeg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ==============================================
+   SEÇÃO SERVIVIÇOS
+=============================================== */
+.card {
+    background-color: #764e2ad7; 
+    transition: 
+    transform 0.4s ease-in-out, 
+    box-shadow 0.4s ease-in-out, 
+    background-color 0.4s ease-in-out;
+}
+
+/* EFEITO 3D MUDANÇA DE COR HOVER */
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.267); 
+   
+}
+
+
+/* ==============================================
+   SEÇÃO PRODUTOS
+=============================================== */
+.menu-card {
+    background: #764e2aab; 
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Faz todos os cards terem o mesmo tamanho */
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-img {
+    height: 400px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.price-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #815b3a;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.menu-card .p-3 {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.buy-btn {
+    background: transparent;
+    border: 2px solid rgb(247, 221, 201);
+    color: white;
+    transition: 0.3s ease-in-out;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buy-btn:hover {
+    background: #6d4926;
+    border-color: #a07d5d;
+    color: white;
+}
+
+.products-section {
+    background-color: #9f6937e2;
+    padding: 40px 0;
+}
+
+/* Ajusta o layout dos cards para ficarem iguais em telas menores */
+@media (max-width: 768px) {
+    .menu-card {
+        height: 100%; /* Mantém os cards do mesmo tamanho */
+        min-height: 420px; /* Define uma altura mínima */
+    }
+    
+    .card-img {
+        height: 390px; /* Reduz a altura das imagens para telas menores */
+    }
+}
+
+/* Remove o zoom em telas muito pequenas */
+@media (max-width: 576px) {
+    .menu-card:hover {
+        transform: none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-card {
+        min-height: 380px; /* Ajusta a altura mínima para telas pequenas */
+    }
+    
+    .card-img {
+        height: 390px; /* Ajusta a imagem para telas pequenas */
+    }
+}
+
+
+
+/* ==============================================
+   CAROUSSEL DE TESTEMUNHAS
+=============================================== */
+
+/*  EFEITO DE TRANSIÇÃO DE UMA TESTEMUNHA PARA OUTRA */
+.testimonial-carousel::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+}
+
+.testimonial-carousel::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+}
+
+/* RESPONSIVIDADE PARA DISPOSTIVOS */
+
+@media (min-width: 768px) {
+  .testimonial-carousel::before,
+  .testimonial-carousel::after {
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonial-carousel::before,
+  .testimonial-carousel::after {
+    width: 300px;
+  }
+}
+
+/* SUAVIZA TRANSIÇÃO ENTRE A PASSAGEM DE UM SLIDE PARA OUTRO */
+.testimonial-carousel .owl-item .testimonial-item,
+.testimonial-carousel .owl-item.center .testimonial-item * {
+  transition: 0.3s;
+}
+
+/* TIPOGRAFIA DAS INFO DAS TESTEMUNHAS */
+.testimonial-carousel .owl-item.center .testimonial-item * {
+  color: #ffffff !important;
+}
+
+/* PONTOS(DOTS) */
+.testimonial-carousel .owl-dots {
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+/* ESTELAS DO CAROUSEL */
+.testimonial-carousel .testimonial-item .stars {
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+.testimonial-carousel .testimonial-item .stars .star-fixed {
+  color: #ffc107 !important;
+  font-size: 16px;
+}
+
+.testimonial-carousel {
+  display: flex;
+}
+
+/* CADA TESTEMUNHA DO CAROUSEL */
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  height: auto;
+}
+
+/* GARANTE QUE OS ELEMENTOS DO CAROUSEL TENHAM MESMA ALTURA INDEPENDENTE DO CONTEÚDO DELES */
+.owl-stage-outer,
+.owl-stage,
+.owl-item {
+  display: flex;
+  align-items: stretch;
+}
+
+.owl-item .testimonial-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-outline-light:hover {
+    background: #9f6937cd !important;
+    border-color: #9f6937cd !important;
+}
+
